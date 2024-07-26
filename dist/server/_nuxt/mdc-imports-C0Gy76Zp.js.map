@@ -1,0 +1,1 @@
+{"version":3,"file":"mdc-imports-C0Gy76Zp.js","sources":["../../../mdc-imports.mjs"],"sourcesContent":["\nexport const remarkPlugins = {\n}\n\nexport const rehypePlugins = {\n}\n\nexport const highlight = {}"],"names":[],"mappings":"AACY,MAAC,gBAAgB,CAC7B;AAEY,MAAC,gBAAgB,CAC7B;AAEY,MAAC,YAAY,CAAA;"}

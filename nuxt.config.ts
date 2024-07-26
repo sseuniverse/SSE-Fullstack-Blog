@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@nuxtjs/mdc",
     "@nuxt/content",
     "./modules/auth.module",
+    "@nuxt/image"
   ],
 
   ui: {
