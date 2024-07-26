@@ -30,6 +30,11 @@ const items = [
       icon: "i-ph-user-duotone",
       click: () => router.replace({ name: "profile" }),
     },
+    {
+      label: "Todos",
+      icon: "i-ph-info-duotone",
+      click: () => router.replace({ name: "todo" }),
+    }
   ],
   [
     {

@@ -1,21 +1,26 @@
 <script setup lang="ts">
 import type { Post } from "~/types";
 
+// Initialize necessary composables
 const toast = useToast();
 const route = useRoute();
 const router = useRouter();
 const { loggedIn, user } = useAuth();
 
+// Construct the API URL based on the route parameter
 const url = `/api/posts/${route.params.post}`;
 
+// Fetch post data
 const { data, pending } = await useFetch<Post>(url).then(async (res) => {
   if (res.data.value) await $fetch(url, { method: "PATCH" });
   return res;
 });
 
+// Reactive state variables
 const editable = ref(false);
 const editing = ref(false);
 
+// Toggle edit mode
 function toggleEdit() {
   if (editing.value) {
     editing.value = false;
@@ -26,6 +31,7 @@ function toggleEdit() {
   }
 }
 
+// Check if the current user can edit the post
 onMounted(async () => {
   if (loggedIn.value && data.value?.user.email === user.value.email) {
     editable.value = true;
@@ -33,6 +39,7 @@ onMounted(async () => {
   }
 });
 
+// Update the post
 async function update() {
   await $fetch(url, {
     method: "PUT",

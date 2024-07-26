@@ -127,7 +127,7 @@ function scrollToPosts() {
           size="xl"
           color="white"
           icon="i-ph-github-logo-duotone"
-          to="https://github.com/arashsheyda/nuxt-fullstack"
+          to="https://github.com/sseuniverse/SSE-Fullstack-Blog"
           target="_blank"
         >
           Source Code

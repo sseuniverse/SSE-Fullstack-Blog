@@ -24,4 +24,13 @@ export interface Post {
   updatedAt: string;
 }
 
+export interface Todo {
+  _id: ObjectId;
+  user: User;
+  title: string;
+  completed: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export type SortingFunction<T> = (a: T, b: T) => number;
