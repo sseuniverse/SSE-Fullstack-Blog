@@ -1,11 +1,8 @@
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
-  const { email } = await requireAuth(event);
-  const user = await UserSchema.findOne({ email });
   try {
-    if (!user) return;
-    return await PostSchema.findOneAndUpdate(
-      { _id: event.context.params?.id, user: user._id },
+    return await TodoSchema.findOneAndUpdate(
+      { _id: event.context.params?.id},
       body,
       { new: true }
     );

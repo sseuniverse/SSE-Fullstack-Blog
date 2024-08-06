@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { me } = useAuth();
+const { me, loggedIn } = useAuth();
 const { auth } = useRuntimeConfig();
 const emit = defineEmits(["onLogin", "onRegister", "onError"]);
 
@@ -114,8 +114,20 @@ async function register() {
             Log in
           </UButton>
         </template>
+
+        <template>
+          <UButton
+            v-if="!loggedIn"
+            to="/api/auth/github"
+            icon="i-simple-icons-github"
+            label="Login with Github"
+            color="black"
+            external
+          />
+        </template>
       </UCard>
     </template>
+
     <template #register="{ item }">
       <UCard @submit.prevent="register">
         <template #header>
